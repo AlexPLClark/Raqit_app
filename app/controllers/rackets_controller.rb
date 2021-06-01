@@ -1,12 +1,11 @@
 class RacketsController < ApplicationController
-  before_action :set_racket, only: [:edit, :update, :destroy]
+  before_action :set_racket, only: [:edit, :show, :update, :destroy]
 
   def index
     @rackets = Racket.all
   end
 
   def show
-    @racket
   end
 
   def new
