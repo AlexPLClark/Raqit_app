@@ -11,16 +11,14 @@
     </div>
   </div>
   <div class="row my-2">
-    <% @rackets.each do |racket| %>
       <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
         <div class="bg-white rounded shadow h-100">
-          <%= image_tag racket.image_url, alt: racket.name %>
+          <%= image_tag @racket.image_url, alt: @racket.name %>
           <div class="p-3 rounded-bottom d-flex flex-column">
             <strong><%= racket.name %>
-            <small class="text-muted"><%= racket.description %></small>
+            <small class="text-muted"><%= @racket.description %></small>
           </div>
         </div>
       </div>
-    <% end %>
   </div>
 </div>
