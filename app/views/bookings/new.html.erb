@@ -1,0 +1,7 @@
+<div class="offset-sm-3 col-sm-6">
+  <%= simple_form_for(@racket, @booking) do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.submit "Book racket", class: "btn btn-primary" %>
+  <% end %>
+</div>
