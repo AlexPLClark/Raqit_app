@@ -26,9 +26,16 @@ class RacketsController < ApplicationController
   end
 
   def update
+    if @racket.update(racket_params)
+      redirect_to racket_path(@racket)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @racket.destroy
+    redirect_to rackets_path
   end
 
   private
