@@ -22,6 +22,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
+    @racket = @booking.racket
     @booking.destroy
     redirect_to racket_path(@racket), notice: 'Booking was successfully destroyed'
   end
