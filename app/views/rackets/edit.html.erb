@@ -7,8 +7,6 @@
     <%= f.input :description %>
     <%= f.input :brand %>
     <%= f.input :image_url %>
-    <% unless @racket.new_record? %>
-      <%= f.input :name %>
     <% end %>
     <%= f.submit %>
   <% end %>

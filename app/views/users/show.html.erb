@@ -1,0 +1,22 @@
+<h1> Dashboard </h1>
+
+<h3>Welcome to your profile <%= @user.first_name%></h3>
+
+<h4> Your Rackets </h4>
+<%= link_to "Add a Racket", new_racket_path %>
+<ul>
+  <% @user.rackets.each do |racket| %>
+    <li> <%=link_to racket.name, racket_path(racket)%></li>
+  <% end %>
+</ul>
+
+<h4> Your Bookings </h4>
+<ul>
+  <% @user.bookings.each do |booking| %>
+    <li> <%=booking.racket.name%></li>
+    <p> Owner: <%=booking.racket.user.first_name%> <%=booking.racket.user.last_name%></p>
+    <p> Dates: <%=booking.start_date%> - <%=booking.end_date%></p>
+    <%= link_to "Edit booking", edit_booking_path(booking) %>
+    <%= link_to "Delete booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
+</ul>
