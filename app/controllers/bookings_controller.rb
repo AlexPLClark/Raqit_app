@@ -11,20 +11,35 @@ class BookingsController < ApplicationController
   def create
     @racket = Racket.find(params[:racket_id])
     @booking = Booking.new(booking_params)
+    @user = current_user
     @booking.racket = @racket
     @booking.user = @user
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to user_path(@user)
     else
       render :new
     end
   end
 
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @user = current_user
+    if @booking.update
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
-    @racket = @booking.racket
+    @user = current_user
     @booking.destroy
-    redirect_to racket_path(@racket), notice: 'Booking was successfully destroyed'
+    redirect_to user_path(@user), notice: 'Booking was successfully destroyed'
   end
 
   private

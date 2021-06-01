@@ -6,6 +6,7 @@ class RacketsController < ApplicationController
   end
 
   def show
+    @user = current_user
   end
 
   def new
@@ -14,6 +15,8 @@ class RacketsController < ApplicationController
 
   def create
     @racket = Racket.new(racket_params)
+    @user = current_user
+    @racket.user = @user
     if @racket.save
       redirect_to racket_path(@racket)
     else
