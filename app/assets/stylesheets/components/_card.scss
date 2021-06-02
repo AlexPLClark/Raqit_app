@@ -1,0 +1,37 @@
+// card-racket
+body {
+  background-color: #38554F;
+}
+.card-racket {
+  position: relative;
+  width: 350px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.card-racket-img {
+  width: 350px;
+  height: 200px;
+  object-fit: cover;
+}
+.card-racket-footer {
+  background-color: #FFFFFF;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.card-racket-footer h2 {
+  font-size: 16px;
+  align-items: start;
+  margin: 0;
+}
+.card-racket-footer p {
+  font-size: 12px;
+  align-items: start;
+  margin: 0;
+}
+
+// card-my-racket
+
