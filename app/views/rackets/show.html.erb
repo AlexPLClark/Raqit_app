@@ -13,12 +13,8 @@
           <br>
           <small class="text-muted"><%= @racket.description %></small>
         </div>
-        <div class="d-flex flex-row justify-content-between">        
-          <p class="bg-light m-3 p-3 rounded-bottom w-100"><%= "@booking.start_date" %></p>
-          <p class="bg-light m-3 p-3 rounded-bottom w-100"><%= "@booking.end_date" %></p>
-        </div>
         <div class="btn btn-flat m-3 p-3 w-100">
-          <%= link_to 'Request a racket' %>
+          <%= link_to "Book Racket", new_racket_booking_path(@racket)%>
         </div>
       </div>
     </div>
@@ -26,6 +22,5 @@
       <%= image_tag @racket.image_url, alt: @racket.name, class: 'racket-img' %>
     </div>
   </div>
-  <%= link_to "Book Racket", new_racket_booking_path(@racket) %>
-  <%= link_to "Back to Home", rackets_path %>
+  <%= link_to "Back to Rackets", rackets_path %>
 </div>
