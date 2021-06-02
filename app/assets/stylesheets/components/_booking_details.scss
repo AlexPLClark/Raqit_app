@@ -9,6 +9,7 @@
   width: 350px;
   margin: 8px;
   border-radius: 4px;
+  font-family: $headers-font;
 }
 
 .information {
@@ -16,11 +17,11 @@
 }
 
 .links{
-  list-style: none;
-  padding: 12px;
+  // padding: 12px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  border-top: solid 1px rgb(223, 223, 223);
+  align-items: flex-end !important;
+  flex-direction: column;
+  // border-top: solid 1px rgb(223, 223, 223);
   margin: 0;
 }
