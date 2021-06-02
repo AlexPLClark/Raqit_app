@@ -28,7 +28,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @user = current_user
-    if @booking.update
+    if @booking.update(booking_params)
       redirect_to user_path(@user)
     else
       render :edit
