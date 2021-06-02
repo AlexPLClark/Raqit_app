@@ -1,19 +1,30 @@
 <div class="position-relative">
-  <div class="card-category card-large">
+  <div class="card-category card-large bg-green">
     <h1><%= @racket.name %></h1>
   </div>
 </div>
-<div class="container mb-5">
-  <div class="row my-2">
-      <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
-        <div class="bg-white rounded shadow h-100">
-          <%= image_tag @racket.image_url, alt: @racket.name %>
-          <div class="p-3 rounded-bottom d-flex flex-column">
-            <strong><%= @racket.name %>
-            <small class="text-muted"><%= @racket.description %></small>
-          </div>
+<div class="container my-3 p-2 bg-white rounded shadow">
+  <div class="row my-2 align-items-stretch">
+    <div class="col-6 col-sm-6" data-aos="zoom-in">
+      <div class="bg-white rounded">
+        <div class="bg-light m-3 p-3 rounded-bottom w-100">
+          <%= @racket.name %>
+          <br>
+          <br>
+          <small class="text-muted"><%= @racket.description %></small>
+        </div>
+        <div class="d-flex flex-row justify-content-between">        
+          <p class="bg-light m-3 p-3 rounded-bottom w-100"><%= "@booking.start_date" %></p>
+          <p class="bg-light m-3 p-3 rounded-bottom w-100"><%= "@booking.end_date" %></p>
+        </div>
+        <div class="btn btn-flat m-3 p-3 w-100">
+          <%= link_to 'Request a racket' %>
         </div>
       </div>
+    </div>
+    <div class="col-6 rounded-bottom flex-column">
+      <%= image_tag @racket.image_url, alt: @racket.name, class: 'racket-img' %>
+    </div>
   </div>
   <%= link_to "Book Racket", new_racket_booking_path(@racket) %>
   <%= link_to "Back to Home", rackets_path %>
