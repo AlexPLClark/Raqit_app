@@ -37,7 +37,7 @@ class RacketsController < ApplicationController
 
   def destroy
     @racket.destroy
-    redirect_to rackets_path
+    redirect_to user_path(current_user)
   end
 
   private

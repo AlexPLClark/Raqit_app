@@ -15,7 +15,9 @@
               <div class="card-racket-footer">
                 <div>
                   <h2><%= link_to 'Edit', edit_racket_path %></h2>
-                  <h2><%= link_to 'Delete', racket_path(racket), method: :delete, data: { confirm: "Are you sure?" } %></h2>
+                  <% unless racket.bookings.any? %>
+                    <h2><%= link_to 'Delete', racket_path(racket), method: :delete, data: { confirm: "Are you sure?" } %></h2>
+                  <% end %>
                 </div>
               </div>
             </div>
