@@ -1,0 +1,26 @@
+.bookings{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card{
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  width: 350px;
+  margin: 8px;
+  border-radius: 4px;
+}
+
+.information {
+  padding: 12px 12px 0px 12px;
+}
+
+.links{
+  list-style: none;
+  padding: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-top: solid 1px rgb(223, 223, 223);
+  margin: 0;
+}

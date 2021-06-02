@@ -11,12 +11,18 @@
 </ul>
 
 <h4> Your Bookings </h4>
-<ul>
+
+<div class="bookings">
   <% @user.bookings.each do |booking| %>
-    <li> <%=booking.racket.name%></li>
-    <p> Owner: <%=booking.racket.user.first_name%> <%=booking.racket.user.last_name%></p>
-    <p> Dates: <%=booking.start_date%> - <%=booking.end_date%></p>
-    <%= link_to "Edit booking", edit_booking_path(booking) %>
-    <%= link_to "Delete booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
+    <div class="card">
+      <div class="information">
+        <h5> <%=booking.racket.name%></h5>
+        <p> Pick up date: <%= booking.start_date %> <br> Drop off date: <%=booking.end_date%></p>
+      </div>
+      <ul class="links">
+        <li><%= link_to "Edit", edit_booking_path(booking) %></li>
+        <li><%= link_to "Delete", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %></li>
+      </ul>
+    </div>
   <% end %>
-</ul>
+</div>
