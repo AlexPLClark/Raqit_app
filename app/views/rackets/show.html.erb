@@ -8,13 +8,13 @@
     <div class="col-6 col-sm-6" data-aos="zoom-in">
       <div class="bg-white rounded">
         <div class="bg-light m-3 p-3 rounded-bottom w-100">
-          <%= @racket.name %>
+         <h2> <%= @racket.name %></h2>
           <br>
           <br>
-          <small class="text-muted"><%= @racket.description %></small>
+          <p><%= @racket.description %></p>
         </div>
 
-        <div class="btn btn-flat m-3 p-3 w-100">
+        <div class="btn btn-primary m-3 p-3 w-100">
           <%= link_to "Book Racket", new_racket_booking_path(@racket)%>
         </div>
       </div>
@@ -24,11 +24,10 @@
     </div>
   </div>
 
-  <%= link_to "Book racket", new_racket_booking_path(@racket) %>
   <% if @racket.user == current_user %>
     <%= link_to "Edit Racket", edit_racket_path%>
     <% end %>
-  
+    <br>
   <%= link_to "Back to Rackets", rackets_path %>
 
 </div>
