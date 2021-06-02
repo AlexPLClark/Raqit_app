@@ -1,23 +1,31 @@
-<div class="cover mb-4 d-flex align-items-center justify-content-center">
-  <div class="text-center text-white">
-    <h1>Tennis is good for you</h1>
-    <h3 class="typed-js"></h3>
+<body>
+  <div class="cover mb-4 d-flex align-items-center justify-content-center">
+    <div class="text-center text-white">
+      <h1>Tennis is good for you</h1>
+      <h3 class="typed-js"></h3>
+    </div>
   </div>
-</div>
-<div class="container py-5">
-  <div class="d-flex align-items-center justify-content-between mb-3">
-    <h3 class="mb-0">The rackets</h3>
-    <%= link_to 'Add a racket', new_racket_path, class: 'btn btn-flat' %>
+  <div class="container py-5">
+    <div class="d-flex align-items-center justify-content-between mb-3">
+      <h3 class="mb-0">The rackets</h3>
+      <%= link_to 'Add a racket', new_racket_path, class: 'btn btn-flat' %>
+    </div>
+    <div class="row">
+      <% @rackets.each do |racket| %>
+        <div class="co-12 colsm-6 col-md-4">
+          <%= link_to racket_path(racket), class:'text-decoration-none' do %>
+            <div class="card-racket">
+              <img src="https://images-na.ssl-images-amazon.com/images/I/51cxohHoU%2BL._AC_SL1010_.jpg" class="card-racket-img"/>
+              <div class="card-racket-footer">
+                <div>
+                  <h2><%= racket.name %></h2>
+                  <p><%= racket.location %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <div class="row">
-    <% @rackets.each do |racket| %>
-      <div class="col-md-4">
-        <%= link_to racket_path(racket), class:'text-decoration-none' do %>
-          <div class="card-category">
-            <%= racket.name %>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-</div>
+</body>

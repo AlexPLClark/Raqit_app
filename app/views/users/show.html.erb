@@ -4,11 +4,25 @@
 
 <h4> Your Rackets </h4>
 <%= link_to "Add a Racket", new_racket_path %>
-<ul>
-  <% @user.rackets.each do |racket| %>
-    <li> <%=link_to racket.name, racket_path(racket)%></li>
-  <% end %>
-</ul>
+<div class="container py-5">
+  <div class="row mb-3">
+    <% @user.rackets.each do |racket| %>
+      <div class="col-sm-6 col-md-4">
+        <%= link_to racket_path(racket), class:'text-decoration-none' do %>
+          <div class="card-racket">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/51cxohHoU%2BL._AC_SL1010_.jpg" class="card-racket-img"/>
+            <div class="card-racket-footer">
+              <div>
+                <h2><%= link_to 'Edit Racket', edit_racket_path %></h2>
+                <h2><%= link_to 'Delete Racket', racket_path(racket), method: :delete, data: { confirm: "Are you sure?" } %></h2>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <h4> Your Bookings </h4>
 
