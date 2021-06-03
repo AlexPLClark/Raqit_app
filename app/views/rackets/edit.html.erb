@@ -1,14 +1,16 @@
-<h1>Editing Racket</h1>
-
 <div class="offset-sm-3 col-sm-6">
-  <%= simple_form_for @racket do |f| %>
-    <%= f.input :name %>
-    <%= f.input :location %>
-    <%= f.input :description %>
-    <%= f.input :brand %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-  <% end %>
+  <div class="offset-sm-3 col-sm-6">
+    <h1 class="large-h1-white">Edit your racket</h1>
+  </div>
+  <div class="offset-sm-3 col-sm-6 form">
+    <%= simple_form_for @racket do |f| %>
+      <%= f.input :name %>
+      <%= f.input :location %>
+      <%= f.input :description %>
+      <%= f.input :brand %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit class: "btn-primary-v-primary-af" %>
+    <% end %>
+  </div>
 </div>
-
 <%= link_to 'Back', rackets_path %>
