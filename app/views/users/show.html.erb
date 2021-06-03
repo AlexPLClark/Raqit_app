@@ -14,15 +14,15 @@
         <% else %>
           <img src="https://www.seekpng.com/png/detail/259-2591609_tennis-racquet-silhouette-at-getdrawings-tennis-rackets-clip.png" class="card-racket-img"/>
         <% end %>
-          <div class="card-racket-footer">
-            <p><%=racket.name%></p>
+        <div class="card-racket-footer">
+          <p><%=racket.name%></p>
             <div class="links">
               <%= link_to 'Edit', edit_racket_path %>
               <% unless racket.bookings.any? %>
                 <%= link_to 'Delete', racket_path(racket), method: :delete, data: { confirm: "Are you sure?" } %>
               <% end %>
             </div>
-          </div>
+          </div>  
         </div>
       <% end %>
     <% end %>
