@@ -47,7 +47,7 @@ class RacketsController < ApplicationController
   end
 
   def racket_params
-    params.require(:racket).permit(:name, :location, :description, :brand, :image_url)
+    params.require(:racket).permit(:name, :location, :description, :brand, :photo)
   end
 
 end
