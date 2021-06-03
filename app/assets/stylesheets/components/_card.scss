@@ -1,10 +1,8 @@
-// card-racket
 .rackets {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-
 .card-racket {
   position: relative;
   width: 350px;
@@ -59,7 +57,7 @@ a {
 .card-category {
   background-size: cover;
   background-position: center;
-  background-color: #42635c;
+  // background-color: #42635c;
   height: 180px;
   display: flex;
   justify-content: center;
@@ -73,4 +71,13 @@ a {
 
 .card-large {
   height: 20vh;
+}
+
+.show-card {
+  border-radius: 20px;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+  box-shadow: 2px 3px #282828;
+  margin-top: 10px;
 }
