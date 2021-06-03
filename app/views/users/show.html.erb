@@ -1,39 +1,41 @@
-<div class="container">
+<div class="container text-center">
   <h1 style="color: #F8F9FA"> Dashboard </h1>
 
-  <h3 style="color: #F8F9FA">Welcome to your profile <%= @user.first_name%></h3>
+  <h3 style="color: #F8F9FA">Welcome <%= @user.first_name%></h3>
 
-  
-  <div class="py-5">
-  <h4 style="color: #F8F9FA"> Your Rackets </h4>
-    <div class="row mb-3">    
-      <% @user.rackets.each do |racket| %>
-        <div class="col-sm-6 col-md-4">
-          <%= link_to racket_path(racket), class:'text-decoration-none' do %>
-            <div class="card-racket">
-              <img src="https://images-na.ssl-images-amazon.com/images/I/51cxohHoU%2BL._AC_SL1010_.jpg" class="card-racket-img"/>
-              <div class="card-racket-footer">
-                <div>
-                  <h2><%= link_to 'Edit', edit_racket_path %></h2>
-                  <% unless racket.bookings.any? %>
-                    <h2><%= link_to 'Delete', racket_path(racket), method: :delete, data: { confirm: "Are you sure?" } %></h2>
-                  <% end %>
-                </div>
-              </div>
+  <h4 class="mt-5" style="color: #F8F9FA"> Your Rackets </h4>
+  <%= link_to "Add Racket", new_racket_path, class: "btn btn-outline-light", type: "button" %>
+  <div class="rackets">    
+    <% @user.rackets.each do |racket| %>
+      <%= link_to racket_path(racket), class:'text-decoration-none' do %>
+        <div class="card-racket">
+        <% if racket.photo.attached?%>
+          <%= cl_image_tag racket.photo.key, alt: racket.name, class: 'card-racket-img' %>
+        <% else %>
+          <img src="https://www.seekpng.com/png/detail/259-2591609_tennis-racquet-silhouette-at-getdrawings-tennis-rackets-clip.png" class="card-racket-img"/>
+        <% end %>
+          <div class="card-racket-footer">
+            <p><%=racket.name%></p>
+            <div class="links">
+              <%= link_to 'Edit', edit_racket_path %>
+              <% unless racket.bookings.any? %>
+                <%= link_to 'Delete', racket_path(racket), method: :delete, data: { confirm: "Are you sure?" } %>
+              <% end %>
             </div>
-          <% end %>
+          </div>
         </div>
       <% end %>
-    </div>
+    <% end %>
   </div>
 
-  <h4 style="color: #F8F9FA"> Your Bookings </h4>
+
+  <h4 class="text-center mt-5" style="color: #F8F9FA;"> Your Bookings </h4>
   <div class="bookings">
     <% @user.bookings.each do |booking| %>
       <div class="card">
         <div class="information">
           <h5> <%=booking.racket.name%></h5>
-          <p> Pick up date: <%= booking.start_date %> <br> Drop off date: <%=booking.end_date%></p>
+          <p> Pick up date: <%= booking.start_date.strftime("%b %d, %Y") %> <br> Drop off date: <%=booking.end_date.strftime("%b %d, %Y")%></p>
         </div>
         <div class="card-racket-footer">
           <div class="links">
@@ -46,4 +48,15 @@
   </div>
 </div>
 
-          
+<div class="footer mt-4">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at WaterLog
+  </div>
+</div>
