@@ -10,6 +10,11 @@
   margin: 8px;
   border-radius: 4px;
   font-family: $headers-font;
+  background-color: #F8F9FA;
+}
+
+a{
+  color: #38554F
 }
 
 .information {
@@ -17,11 +22,9 @@
 }
 
 .links{
-  // padding: 12px;
   width: 100%;
   display: flex;
   align-items: flex-end !important;
   flex-direction: column;
-  // border-top: solid 1px rgb(223, 223, 223);
   margin: 0;
 }
