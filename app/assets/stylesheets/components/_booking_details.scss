@@ -11,6 +11,14 @@
   border-radius: 4px;
   font-family: $headers-font;
   background-color: #F8F9FA;
+  text-align: left;
+  .links {
+    width: 100%;
+    display: flex;
+    align-items: flex-end !important;
+    flex-direction: column;
+    margin: 0;
+  }
 }
 
 a{
@@ -21,10 +29,3 @@ a{
   padding: 12px 12px 0px 12px;
 }
 
-.links{
-  width: 100%;
-  display: flex;
-  align-items: flex-end !important;
-  flex-direction: column;
-  margin: 0;
-}
