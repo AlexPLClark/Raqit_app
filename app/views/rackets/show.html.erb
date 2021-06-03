@@ -20,10 +20,14 @@
         </div>
       </div>
       <div class="col-6 rounded-bottom flex-column">
-        <%= image_tag @racket.image_url, alt: @racket.name, class: 'racket-img' %>
+        <% if @racket.photo.attached?%>
+          <%= cl_image_tag @racket.photo.key, alt: @racket.name, class: 'racket-img' %>
+        <% else %>
+          <img src="https://images-na.ssl-images-amazon.com/images/I/51cxohHoU%2BL._AC_SL1010_.jpg" class="card-racket-img"/>
+        <% end %>
       </div>
     </div>
-</div>
+    
   <% if @racket.user == current_user %>
     <%= link_to "Edit Racket", edit_racket_path%>
     <% end %>
