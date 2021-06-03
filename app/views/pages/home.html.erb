@@ -1,9 +1,74 @@
-<div class="home-container">
-    <div class="cover mb-4 d-flex align-items-center justify-content-center home-container">
-        <div class="text-center text-white">
-          <h1 class="large-h1">Borrow a tennis racket in London</h1>
-          <%=link_to "Find a Racket", rackets_path, class: 'btn btn-primary btn-lg' %>
-          <h3 class="typed-js"></h3>
-        </div>
+<body>
+  <!-- Banner section -->
+  <div class="banner-container">
+    <div class="banner">
+      <h1 id="banner-title">Find tennis rackets near you</h1>
+      <p class="pb-5">Browse and book thousands of tennis rackets across the UK.</p>
+      <%=link_to 'Find a Racket', rackets_path, class: 'btn btn-outline-light btn-lg', type: "button" %>
     </div>
+  </div>
+
+<!-- Carousel -->
+<div class="carousel-container">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item  active" style="width: 1000px; height: 500px;">
+        <%= image_tag 'naomi_osaka_pic.jpg', alt: 'photo of tennis player' %>
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Naomi Osaka</h5>
+          <p class="carousel-legend">"<strong>Raqit</strong> is quite literally the only thing that makes me happy"</p>
+        </div>
+      </div>
+      <div class="carousel-item" style="width: 1000px; height: 500px">
+        <%= image_tag 'maria_sharapova.jpg', alt: 'photo of tennis player' %>
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Maria Sharapova</h5>
+          <p>"Through <strong>Raqit</strong>, I was able to rediscover myself"</p>
+        </div>
+      </div>
+      <div class="carousel-item" style="width: 1000px; height: 500px">
+        <%= image_tag 'venus_williams.jpg' %>
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Venus Williams</h5>
+          <p>"I love using <strong>Raqit</strong> to find great tennis gear in my area"</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 </div>
+
+  <!-- Footer -->
+  <div class="footer-home">
+    <div class="icon-container">
+      <ul class="list-inline">
+        <li>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </li>
+      </ul>
+    </div>
+    <p>This website was coded with 💦 by the team at WaterLog</p>
+  </div>
+
+</body>

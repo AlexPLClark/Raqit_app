@@ -1,0 +1,25 @@
+.footer-home {
+  align-items: center;
+  text-align: center;
+  padding: 60px;
+  background-color: #2c2b2b;
+}
+.footer-home a {
+  font-size: 30px;
+  color: #FFE5B4;
+  transition: all 0.3s ease;
+}
+.footer-home a:hover {
+  color: #FFD586;
+}
+.footer-home p {
+  color: #6B6C6C;
+}
+.list-inline {
+  list-style: none;
+  padding-left: 0px;
+}
+.list-inline li {
+  display: inline;
+  padding: 0px 8px;
+}
