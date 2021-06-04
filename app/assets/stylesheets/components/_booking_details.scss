@@ -10,18 +10,22 @@
   margin: 8px;
   border-radius: 4px;
   font-family: $headers-font;
+  background-color: #F8F9FA;
+  text-align: left;
+  .links {
+    width: 100%;
+    display: flex;
+    align-items: flex-end !important;
+    flex-direction: column;
+    margin: 0;
+  }
+}
+
+a{
+  color: #38554F
 }
 
 .information {
   padding: 12px 12px 0px 12px;
 }
 
-.links{
-  // padding: 12px;
-  width: 100%;
-  display: flex;
-  align-items: flex-end !important;
-  flex-direction: column;
-  // border-top: solid 1px rgb(223, 223, 223);
-  margin: 0;
-}

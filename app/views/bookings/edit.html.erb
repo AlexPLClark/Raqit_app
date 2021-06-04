@@ -1,7 +1,11 @@
-<div class="offset-sm-3 col-sm-6">
-  <%= simple_form_for [@racket, @booking] do |f| %>
+<div class="offset-md-3 col-md-6">
+  <div class="offset-md-2">
+    <h1 class="large-h1-white">Edit your booking</h1>
+  </div>
+  <div class="offset-md-2 form">
+    <%= simple_form_for [@racket, @booking] do |f| %>
     <%= f.input :start_date %>
     <%= f.input :end_date %>
-    <%= f.submit "Edit booking", class: "btn btn-primary" %>
+    <%= f.submit "Edit booking", class: "btn-primary-v-primary-af" %>
   <% end %>
 </div>

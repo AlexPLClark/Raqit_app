@@ -1,12 +1,33 @@
-// .btn-home {
-//   color: white !important;
-//   border-radius: 8px;
-//   padding: 25px;
-//   font-size: 18px;
-//   font-weight: bold;
-//   background-color: black;
-//   transition: all 0.3s ease;
-// }
-// .btn-home:hover {
-//   background-color: #202020;
-// }
+
+.btn-home {
+  color: white !important;
+  border-radius: 8px;
+  padding: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: black;
+  transition: all 0.3s ease;
+}
+.btn-home:hover {
+  background-color: #202020;
+}
+
+.btn-primary {
+color: white !important;
+font-size: 18px;
+font-weight: bold;
+background-color: blue;
+}
+
+.btn-primary-v-primary-af {
+color: white;
+font-size: 20px;
+font-weight: bold;
+background-color: black;
+border-radius: 20px;
+padding-top: 15px;
+padding-right: 30px;
+padding-bottom: 15px;
+padding-left: 30px;
+width: 100%;
+}

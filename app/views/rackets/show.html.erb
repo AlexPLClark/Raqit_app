@@ -1,29 +1,33 @@
-<div class="position-relative">
-  <div class="card-category card-large bg-green">
-    <h1><%= @racket.name %></h1>
+<div class="offset-sm-3 col-sm-6">
+  <div class="position-relative">
+    <div class="offset-sm-3 col-sm-6">
+      <h1 class="large-h1-white"><%= @racket.name %></h1>
+    </div>
   </div>
-</div>
-<div class="container my-3 p-2 bg-white rounded shadow">
-  <div class="row my-2 align-items-stretch">
-    <div class="col-6 col-sm-6" data-aos="zoom-in">
-      <div class="bg-white rounded">
-        <div class="bg-light m-3 p-3 rounded-bottom w-100">
-         <h2> <%= @racket.name %></h2>
-          <br>
-          <br>
-          <p><%= @racket.description %></p>
-        </div>
-
-        <div class="btn btn-primary m-3 p-3 w-100">
-          <%= link_to "Book Racket", new_racket_booking_path(@racket)%>
+  <div class="container my-3 p-2 bg-white show-card">
+    <div class="row my-2 align-items-stretch">
+      <div class="col-6 col-sm-6" data-aos="zoom-in">
+        <div class="bg-white rounded">
+          <div class="bg-light m-3 p-3 rounded-bottom w-100">
+           <h2> <%= @racket.name %></h2>
+            <br>
+            <br>
+            <p><%= @racket.description %></p>
+          </div>
+          <div class="btn-primary-v-primary-af m-3 p-3 w-100">
+            <%= link_to "Book Racket", new_racket_booking_path(@racket), class: "link" %>
+          </div>
         </div>
       </div>
+      <div class="col-6 rounded-bottom flex-column">
+        <% if @racket.photo.attached?%>
+          <%= cl_image_tag @racket.photo.key, alt: @racket.name, class: 'racket-img' %>
+        <% else %>
+          <img src="https://images-na.ssl-images-amazon.com/images/I/51cxohHoU%2BL._AC_SL1010_.jpg" class="card-racket-img"/>
+        <% end %>
+      </div>
     </div>
-    <div class="col-6 rounded-bottom flex-column">
-      <%= image_tag @racket.image_url, alt: @racket.name, class: 'racket-img' %>
-    </div>
-  </div>
-
+    
   <% if @racket.user == current_user %>
     <%= link_to "Edit Racket", edit_racket_path%>
     <% end %>
