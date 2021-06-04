@@ -1,37 +1,42 @@
-<div class="offset-sm-3 col-sm-6">
-  <div class="position-relative">
-    <div class="offset-sm-3 col-sm-6">
-      <h1 class="large-h1-white"><%= @racket.name %></h1>
+<div class="container" >
+  <h1 class="text-center m-3" style="color: #F8F9FA"><%= @racket.name %></h1>
+  <div class="show-card" style="background-color: #F8F9FA;">
+    <div class="racket-left p-3 ">
+      <div class="info w-60">
+        <h3><i class="fa fa-map-pin"></i> <%= @racket.location %></h3>
+        <br>
+        <h5><%= @racket.brand.capitalize %></h5>
+        <p><%= @racket.description %></p>
+      </div>
+      <div class="bottom">
+        <% if @racket.user == current_user %>
+          <%= link_to "Edit Racket", edit_racket_path, class: "btn btn-outline-success", type: "button" %>
+        <% else %>
+          <%= link_to "Book Racket", new_racket_booking_path(@racket), class: "btn btn-outline-success", type: "button" %>
+        <% end %>
+        <div class="links">
+          <%= link_to "Back", rackets_path %>
+        </div> 
+      </div>
+    </div>
+    <% if @racket.photo.attached?%>
+      <%= cl_image_tag @racket.photo.key, alt: @racket.name, class: 'racket-img' %>
+    <% else %>
+      <img src="https://images-na.ssl-images-amazon.com/images/I/51cxohHoU%2BL._AC_SL1010_.jpg" class="card-racket-img"/>
+    <% end %>
+  </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+      This website is made with <i class="fas fa-heart"></i> at WaterLog
     </div>
   </div>
-  <div class="container my-3 p-2 bg-white show-card">
-    <div class="row my-2 align-items-stretch">
-      <div class="col-6 col-sm-6" data-aos="zoom-in">
-        <div class="bg-white rounded">
-          <div class="bg-light m-3 p-3 rounded-bottom w-100">
-           <h2> <%= @racket.name %></h2>
-            <br>
-            <br>
-            <p><%= @racket.description %></p>
-          </div>
-          <div class="btn-primary-v-primary-af m-3 p-3 w-100">
-            <%= link_to "Book Racket", new_racket_booking_path(@racket), class: "link" %>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 rounded-bottom flex-column">
-        <% if @racket.photo.attached?%>
-          <%= cl_image_tag @racket.photo.key, alt: @racket.name, class: 'racket-img' %>
-        <% else %>
-          <img src="https://images-na.ssl-images-amazon.com/images/I/51cxohHoU%2BL._AC_SL1010_.jpg" class="card-racket-img"/>
-        <% end %>
-      </div>
-    </div>
-    
-  <% if @racket.user == current_user %>
-    <%= link_to "Edit Racket", edit_racket_path%>
-    <% end %>
-    <br>
-  <%= link_to "Back to Rackets", rackets_path %>
 
-</div>

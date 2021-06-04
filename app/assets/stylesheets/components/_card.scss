@@ -71,7 +71,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: F8F9FA;
+  color: #F8F9FA;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -89,10 +89,19 @@ a {
 }
 
 .show-card {
-  border-radius: 20px;
-  border-color: black;
-  border-width: 2px;
-  border-style: solid;
-  box-shadow: 2px 3px #282828;
-  margin-top: 10px;
+  border-radius: 4px;
+  height: 350px;
+  max-width: 800px;
+  display: flex;
+  border: black 1px solid;
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  margin: 0 auto;
+  align-items: space-between;
+}
+
+.racket-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid black;
 }
