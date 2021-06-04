@@ -8,16 +8,14 @@
         <h5><%= @racket.brand.capitalize %></h5>
         <p><%= @racket.description %></p>
       </div>
-      <div class="bottom">
-        <% if @racket.user == current_user %>
-          <%= link_to "Edit Racket", edit_racket_path, class: "btn btn-outline-success", type: "button" %>
-        <% else %>
-          <%= link_to "Book Racket", new_racket_booking_path(@racket), class: "btn btn-outline-success", type: "button" %>
-        <% end %>
-        <div class="links">
-          <%= link_to "Back", rackets_path %>
-        </div> 
-      </div>
+        <div class="link-flex">
+           <% if @racket.user == current_user %>
+              <%= link_to "Edit Racket", edit_racket_path, class: "btn btn-outline-success", type: "button" %>
+            <% else %>
+              <%= link_to "Book Racket", new_racket_booking_path(@racket), class: "btn btn-outline-success", type: "button" %>
+            <% end %>
+          <%= link_to "Back", rackets_path, class: "btn btn-outline-success", type: "button"  %>
+        </div>
     </div>
     <% if @racket.photo.attached?%>
       <%= cl_image_tag @racket.photo.key, alt: @racket.name, class: 'racket-img' %>
@@ -25,6 +23,6 @@
       <img src="https://images-na.ssl-images-amazon.com/images/I/51cxohHoU%2BL._AC_SL1010_.jpg" class="card-racket-img"/>
     <% end %>
   </div>
-  </div>
+</div>
 
 </div>
