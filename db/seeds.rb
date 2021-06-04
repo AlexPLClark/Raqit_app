@@ -1,6 +1,8 @@
 require 'open-uri'
 
+Booking.destroy_all
 Racket.destroy_all
+User.destroy_all
 
 puts "Creating users..."
   benjamin = User.create(email: "benj@test.com", password: "123456", first_name: "Benjamin", last_name: "Kennedy")
