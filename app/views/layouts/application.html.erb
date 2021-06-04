@@ -8,11 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
+
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body style="background-image: url(<%= image_url('tennis-bg-5.png')%>); min-height: 100vh">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <body style="background-image: url(<%= image_url('tennis-bg-5.png')%>);">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #EDEEC9;">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -38,6 +39,20 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   <% end %>
+  <div style="min-height: 100vh">  
     <%= yield %>
+  </div>
+  <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+      This website is made with <i class="fas fa-heart"></i> at WaterLog
+    </div>
+  </div>
   </body>
 </html>

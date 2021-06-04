@@ -1,9 +1,9 @@
 <div class="container text-center">
-  <h1 style="color: #F8F9FA"> Dashboard </h1>
+  <h1 style="color: #EDEEC9"> Dashboard </h1>
 
-  <h3 style="color: #F8F9FA">Welcome <%= @user.first_name%></h3>
+  <h3 style="color: #EDEEC9">Welcome <%= @user.first_name%></h3>
 
-  <h4 class="mt-5" style="color: #F8F9FA"> Your Rackets </h4>
+  <h4 class="mt-5" style="color: #EDEEC9"> Your Rackets </h4>
   <%= link_to "Add Racket", new_racket_path, class: "btn btn-outline-light", type: "button" %>
   <div class="rackets">    
     <% @user.rackets.each do |racket| %>
@@ -29,7 +29,7 @@
   </div>
 
 
-  <h4 class="text-center mt-5" style="color: #F8F9FA;"> Your Bookings </h4>
+  <h4 class="text-center mt-5" style="color: #EDEEC9;"> Your Bookings </h4>
   <div class="bookings">
     <% @user.bookings.each do |booking| %>
       <div class="card">
@@ -48,15 +48,3 @@
   </div>
 </div>
 
-<div class="footer mt-4">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  <div class="footer-copyright">
-    This website is made with <i class="fas fa-heart"></i> at WaterLog
-  </div>
-</div>
