@@ -3,9 +3,13 @@
   padding: 25px;
   border-radius: 20px;
   font-size: 20px;
-  border-color: black;
-  border-width: 2px;
-  border-style: solid;
-  box-shadow: 2px 3px #282828;
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
   margin-top: 20px;
+}
+
+.form-control {
+  background-color: #EDEEC9;
+  &:focus {
+    background-color: #dadbbc;
+  }
 }

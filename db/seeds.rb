@@ -1,5 +1,7 @@
 require 'open-uri'
 
+Racket.destroy_all
+
 puts "Creating users..."
   benjamin = User.create(email: "benj@test.com", password: "123456", first_name: "Benjamin", last_name: "Kennedy")
   lisa = User.create(email: "lisa@test.com", password: "123456", first_name: "Lisa", last_name: "Simpson")
